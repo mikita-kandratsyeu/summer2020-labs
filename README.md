@@ -9,7 +9,7 @@ Setup your IDE accordingly:
 
 Setup Git:
 
-Run: `git config --global core.autocrlf true`
+Run: `git config --global core.autocrlf false`
 
 For VS code:
 
