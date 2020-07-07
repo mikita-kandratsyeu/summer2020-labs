@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aliaksei-lyzo/Summer2020.git"
+    "url": "git+https://github.com/mikita-kandratsyeu/summer2020-labs.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/aliaksei-lyzo/Summer2020/issues"
+    "url": "https://github.com/mikita-kandratsyeu/summer2020-labs/issues"
   },
-  "homepage": "https://github.com/aliaksei-lyzo/Summer2020#readme",
+  "homepage": "https://github.com/mikita-kandratsyeu/summer2020-labs#readme",
   "devDependencies": {
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
