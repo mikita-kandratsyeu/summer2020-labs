@@ -77,15 +77,15 @@ function sqrN(x, n) {
 
 console.log(sqrN(2, -1));
 
-function factorialLoop(x) {
+function factorialRecursion(x) {
   // (4) => 24
 
-  return (x === 1) ? x : x * factorialLoop(x - 1);
+  return (x === 1) ? x : x * factorialRecursion(x - 1);
 }
 
-console.log(factorialLoop(4));
+console.log(factorialRecursion(4));
 
-function factorialRecursion(x) {
+function factorialLoop(x) {
   // (4) => 24
   let result = 1;
   for (let i = 1; i <= x; i += 1) {
@@ -95,7 +95,7 @@ function factorialRecursion(x) {
   return result;
 }
 
-console.log(factorialRecursion(5));
+console.log(factorialLoop(5));
 
 function round(x) {
   // (5.8) => 6
@@ -128,34 +128,41 @@ console.log(round(-2.8));
 function rectangle(width, height) {
   // function should return string
 
+  let temp = '';
   for (let i = 0; i < height; i += 1) {
-    let temp = '';
     for (let j = 0; j < width; j += 1) {
       temp += '* ';
     }
-    console.log(temp);
+    temp += '\n';
   }
+
+  return temp;
 }
 
-rectangle(10, 5);
+console.log(rectangle(10, 5));
 
 function rightTriangle(lines) {
   // function should return string
 
   let temp = '';
-  for (let i = 0; i < lines; i += 1) {
-    temp += '* ';
-    console.log(temp);
+  for (let i = 0; i <= lines; i += 1) {
+    for (let j = 0; j < i; j += 1) {
+      temp += '* ';
+    }
+
+    temp += '\n';
   }
+
+  return temp;
 }
 
-rightTriangle(10);
+console.log(rightTriangle(10));
 
 function equilateralTriangle(lines) {
   // function should return string
 
+  let temp = '';
   for (let i = 0; i < lines; i += 1) {
-    let temp = '';
     for (let j = 0; j < lines - i - 1; j += 1) {
       temp += ' ';
     }
@@ -163,11 +170,13 @@ function equilateralTriangle(lines) {
       temp += '*';
     }
 
-    console.log(temp);
+    temp += '\n';
   }
+
+  return temp;
 }
 
-equilateralTriangle(5);
+console.log(equilateralTriangle(10));
 
 function rhombus(lines) {
 // function should return string
@@ -180,8 +189,6 @@ function rhombus(lines) {
 
   let temp = '';
   for (let i = 0; i < lines + 1; i += 1) {
-    temp = '';
-
     for (let j = 0; j < lines - i; j += 1) {
       temp += ' ';
     }
@@ -189,12 +196,10 @@ function rhombus(lines) {
       temp += '*';
     }
 
-    console.log(temp);
+    temp += '\n';
   }
 
   for (let i = lines; i > 0; i -= 1) {
-    temp = '';
-
     for (let j = 1; j < lines - i + 2; j += 1) {
       temp += ' ';
     }
@@ -203,8 +208,10 @@ function rhombus(lines) {
       temp += '*';
     }
 
-    console.log(temp);
+    temp += '\n';
   }
+
+  return temp;
 }
 
-rhombus(10);
+console.log(rhombus(10));
