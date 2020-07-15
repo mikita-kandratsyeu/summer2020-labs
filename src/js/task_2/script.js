@@ -18,7 +18,7 @@ function startsWith(str, substr) {
 function isCamelCase(str) {
   // your logic here
   // (‘email’) => false
-  // (‘eMail’) => false
+  // (‘eMail’) => true
   // (‘e_mail’) => false
 }
 
