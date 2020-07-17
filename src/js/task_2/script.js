@@ -6,35 +6,32 @@ function reverseString(str) {
   // your logic here
   // can be several variants
 
-  let result = '';
-  for (let i = str.length - 1; i >= 0; i -= 1) {
-    result += str[i];
-  }
-
-  return result;
+  return Array.from(str).reverse().join('');
 }
 
-console.log(reverseString('nikita'));
+console.log(reverseString('👽👽👽'));
 
 function endsWith(str, substr) {
   // your logic here
   // can be several variants
 
-  const regExp = new RegExp(`${substr}$`);
+  const regExp = new RegExp(`[(${substr})]$`);
+
   return regExp.test(str);
 }
 
-console.log(endsWith('Mikita', 'a'));
+console.log(endsWith('Mikita', '.'));
 
 function startsWith(str, substr) {
   // your logic here
   // can be several variants
 
-  const regExp = new RegExp(`^${substr}`);
+  const regExp = new RegExp(`^[(${substr})]`);
+
   return regExp.test(str);
 }
 
-console.log(startsWith('Mikita', 'Mв'));
+console.log(startsWith('Mikita', '.'));
 
 function isCamelCase(str) {
   // your logic here
@@ -42,16 +39,18 @@ function isCamelCase(str) {
   // (‘eMail’) => true
   // (‘e_mail’) => false
 
-  const regExp = /([A-Z][a-z0-9]+)+/g;
-  return regExp.test(str);
+  const regExp = /([a-z]+[A-Z][a-z]+)/g;
+
+  return (regExp.test(str)) ? !(/[\s_-]/g.test(str)) : false;
 }
 
-console.log(isCamelCase('camelCase'));
+console.log(isCamelCase('_sDamel_case'));
 
 function isSnakeCase(str) {
   // your logic here
 
   const regExp = /([_][a-z0-9]+)+/g;
+
   return regExp.test(str);
 }
 
@@ -60,16 +59,18 @@ console.log(isSnakeCase('snake_case'));
 function isKebabCase(str) {
   // your logic here
 
-  const regExp = /([-][a-z0-9]+)+/g;
-  return regExp.test(str);
+  const regExp = /([a-z]([-])[a-z])+/g;
+
+  return (regExp.test(str)) ? !(/[\s_]/g.test(str)) : false;
 }
 
-console.log(isKebabCase('kebab-case'));
+
+console.log(isKebabCase('keb-abA_casAe'));
 
 function isNaN(value) {
   // your logic here
 
-  return !(+value);
+  return !(+value || +value === 0);
 }
 
 console.log(isNaN(NaN));
@@ -101,16 +102,16 @@ console.log(isFalsy(null));
 
 function matchAllOccurrences(str, substr, sensitive) {
   const regExp = new RegExp((sensitive) ? `${substr}` : `${substr.toLowerCase()}`, 'g');
+  const string = (sensitive) ? str : str.toLowerCase();
+
   const result = [];
 
-  const string = (sensitive) ? str : str.toLowerCase();
-  let match;
-  do {
-    match = regExp.exec(string);
-    if (match) {
-      result.push(match.index);
-    }
-  } while (match);
+  let execItem = regExp.exec(string);
+
+  while (execItem !== null) {
+    result.push(execItem.index);
+    execItem = regExp.exec(string);
+  }
 
   return result;
 }
@@ -127,14 +128,14 @@ console.log(matchAllOccurrences('NiKnikNikniknik', 'nik', false));
 function getAllIntNumbersInInterval(a, b) {
   const result = [];
 
-  for (let i = a; i <= b; i += 1) {
-    result.push((Number.isInteger(i)) ? i : Math.floor(i));
+  for (let i = Math.ceil(a); i <= Math.floor(b); i += 1) {
+    result.push(i);
   }
 
   return result;
 }
 
-console.log(getAllIntNumbersInInterval(1.6, 5.6));
+console.log(getAllIntNumbersInInterval(1.2, 6.9));
 
 // Write a function that displays all odd integer values located
 // in the numerical interval from A to B.
@@ -160,30 +161,20 @@ console.log(getAllOddIntegerValues(1.6, 8.9));
 // 1024 -> "four", 12309 -> "nine"
 
 function getLastDigitIntoEnglishWord(value) {
-  switch (value % 10) {
-    case 0:
-      return `${value} -> Zero`;
-    case 1:
-      return `${value} -> One`;
-    case 2:
-      return `${value} -> Two`;
-    case 3:
-      return `${value} -> Three`;
-    case 4:
-      return `${value} -> Four`;
-    case 5:
-      return `${value} -> Five`;
-    case 6:
-      return `${value} -> Six`;
-    case 7:
-      return `${value} -> Seven`;
-    case 8:
-      return `${value} -> Eight`;
-    case 9:
-      return `${value} -> Nine`;
-    default:
-      return `${value} -> Nothing`;
-  }
+  const config = {
+    1: 'one',
+    2: 'two',
+    3: 'three',
+    4: 'four',
+    5: 'five',
+    6: 'six',
+    7: 'seven',
+    8: 'eight',
+    9: 'nine',
+    0: 'zero',
+  };
+
+  return config[value % 10];
 }
 
 console.log(getLastDigitIntoEnglishWord(512));
