@@ -15,20 +15,34 @@ function endsWith(str, substr) {
   // your logic here
   // can be several variants
 
-  const regExp = new RegExp(`[(${substr})]$`);
+  let i = str.length - 1;
+  let j = substr.length - 1;
 
-  return regExp.test(str);
+  while (j >= 0) {
+    if (str[i] !== substr[j]) {
+      return false;
+    }
+
+    i -= 1;
+    j -= 1;
+  }
+
+  return true;
 }
 
-console.log(endsWith('Mikita', '.'));
+console.log(endsWith('Mikita]', ']'));
 
 function startsWith(str, substr) {
   // your logic here
   // can be several variants
 
-  const regExp = new RegExp(`^[(${substr})]`);
+  for (let i = 0; i < substr.length; i += 1) {
+    if (str[i] !== substr[i]) {
+      return false;
+    }
+  }
 
-  return regExp.test(str);
+  return true;
 }
 
 console.log(startsWith('Mikita', '.'));
