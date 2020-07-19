@@ -13,13 +13,26 @@ body {
     margin: 0 auto;
 
     /*temporary__item*/
-    border: 1px solid red;
+    /*border: 1px solid red;*/
+}
+
+.button-round {
+    height: 60px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 2px;
+    align-items: center;
+    border: 0;
+    border-radius: 45px;
 }
 
 /*NAV MENU*/
 
 .header {
     height: 130px;
+    position: relative;
+    z-index: 1;
     background-color: rgba(255, 127, 127, 0.8);
 }
 
@@ -31,6 +44,18 @@ body {
     padding: 20px 80px;
     font-weight: bold;
     text-transform: uppercase;
+}
+
+.header__logo__link {
+    display: block;
+    height: 83px;
+    width: 107px;
+    background-image: url("../images/brand_empty.png");
+    transition: 0.3s all ease-out;
+}
+
+.header__logo__link:hover {
+    background-image: url("../images/brand_full.png");
 }
 
 .header__menu__link {
@@ -56,14 +81,46 @@ body {
 
 .top-part {
     /*temporary__item*/
-    border: 1px solid yellow;
+    /*border: 1px solid yellow;*/
 
     position: relative;
-    z-index: -1;
+    z-index: 0;
     margin-top: -130px;
 }
 
 .top-part .container {
-    padding: 265px 0 430px 0;
+    box-sizing: border-box;
+    padding: 265px 100px 422px 100px;
     background-image: url("../images/main_img.png");
+}
+
+.top-part__describe {
+    color: white;
+    width: 575px;
+}
+
+.top-part__describe__title {
+    text-transform: uppercase;
+    font-size: 50px;
+    margin-bottom: 40px;
+}
+
+.top-part__describe__title > h1 {
+    margin: 0;
+}
+
+.top-part__describe__text {
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+.top-part__describe__button {
+    width: 315px;
+    color: rgba(255, 127, 127, 1);
+    transition: 0.3s all ease-out;
+}
+
+.top-part__describe__button:hover {
+    color: white;
+    background-color: #ffaf77;
 }
