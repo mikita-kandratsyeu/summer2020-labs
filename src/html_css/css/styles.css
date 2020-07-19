@@ -2,4 +2,68 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+
+    /*temporary__item*/
+    background-color: gray;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+
+    /*temporary__item*/
+    border: 1px solid red;
+}
+
+/*NAV MENU*/
+
+.header {
+    height: 130px;
+    background-color: rgba(255, 127, 127, 0.8);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 20px 80px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.header__menu__link {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    margin: 0 30px;
+    transition: 0.3s all ease-out;
+}
+
+.header__menu__link:hover, .header__search__link:hover {
+    color: #ffaf77;
+}
+
+.header__search__link {
+    color: white;
+    font-size: 20px;
+    transition: 0.3s all ease-out;
+}
+
+/*TOP-PART*/
+
+.top-part {
+    /*temporary__item*/
+    border: 1px solid yellow;
+
+    position: relative;
+    z-index: -1;
+    margin-top: -130px;
+}
+
+.top-part .container {
+    padding: 265px 0 430px 0;
+    background-image: url("../images/main_img.png");
 }
