@@ -5,13 +5,12 @@ body {
     font-family: 'Montserrat', sans-serif;
 
     /*temporary__item*/
-    background-color: #ff7f7f;;
+    background-color: #ff7f7f;
 }
 
 .container {
     max-width: 1440px;
     margin: 0 auto;
-
     /*temporary__item*/
     /*border: 1px solid red;*/
 }
@@ -140,7 +139,7 @@ body {
 
 .middle-part > .container {
     box-sizing: border-box;
-    padding: 150px 30px 30px 30px;
+    padding: 150px 50px 50px 50px;
     background-color: #ff7f7f;
 }
 
@@ -175,8 +174,8 @@ body {
 .middle-part__inner__cards__card {
     text-align: center;
     width: 240px;
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-left: 40px;
+    margin-right: 40px;
 
     /*temporary__item*/
     /*border: 1px solid greenyellow;*/
