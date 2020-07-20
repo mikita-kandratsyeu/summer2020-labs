@@ -190,7 +190,40 @@ body {
     color: #ffaf77;
 }
 
-.middle-part__inner__animation-sushi {
-    /*temporary__item*/
-    border: 1px solid greenyellow;
+/*ANIMATIONS*/
+
+.down-up, .up-down {
+    display: block;
+    position: relative;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.down-up {
+    animation-name: down-up;
+}
+
+.up-down {
+    animation-name: up-down;
+}
+
+@keyframes down-up {
+    from {
+        top: 0;
+    }
+
+    to {
+        top: 70%;
+    }
+}
+
+@keyframes up-down {
+    from {
+        top: 70%;
+    }
+
+    to {
+        top: 0;
+    }
 }
