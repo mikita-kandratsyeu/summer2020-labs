@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node src/app.js",
     "js-task-1": "node src/js/task_1/script.js",
-    "js-task-2": "node src/js/task_2/script.js"
+    "js-task-2": "node src/js/task_2/script.js",
+    "js-task-3": "node src/js/task_3/script.js"
   },
   "repository": {
     "type": "git",
