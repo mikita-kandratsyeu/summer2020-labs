@@ -3,16 +3,12 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
-
-    /*temporary__item*/
     background-color: #ff7f7f;
 }
 
 .container {
     max-width: 1440px;
     margin: 0 auto;
-    /*temporary__item*/
-    /*border: 1px solid red;*/
 }
 
 .button-round {
@@ -59,7 +55,7 @@ body {
     text-decoration: none;
     color: #ffffff;
     font-size: 20px;
-    margin: 0 30px;
+    margin: 0 20px;
     transition: all 0.3s ease-in-out;
 }
 
@@ -76,9 +72,6 @@ body {
 /*TOP-PART*/
 
 .top-part {
-    /*temporary__item*/
-    /*border: 1px solid yellow;*/
-
     position: relative;
     z-index: 1;
     margin-top: -130px;
@@ -131,15 +124,12 @@ body {
     position: relative;
     z-index: 0;
     margin-top: -295px;
-    /*temporary__item*/
-    /*border: 1px solid yellow;*/
-
     color: #ffffff;
 }
 
 .middle-part > .container {
     box-sizing: border-box;
-    padding: 150px 50px 50px 50px;
+    padding: 150px 40px 50px 40px;
     background-color: #ff7f7f;
 }
 
@@ -148,9 +138,6 @@ body {
     margin: 0 auto;
     text-align: center;
     font-size: 20px;
-
-    /*temporary__item*/
-    /*border: 1px solid greenyellow;*/
 }
 
 .middle-part__describe__title {
@@ -159,9 +146,6 @@ body {
 }
 
 .middle-part__inner {
-    /*temporary__item*/
-    /*border: 1px solid greenyellow;*/
-
     display: flex;
     justify-content: space-between;
 }
@@ -174,11 +158,8 @@ body {
 .middle-part__inner__cards__card {
     text-align: center;
     width: 240px;
-    margin-left: 40px;
-    margin-right: 40px;
-
-    /*temporary__item*/
-    /*border: 1px solid greenyellow;*/
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 .middle-part__inner__cards__card__link {
@@ -325,6 +306,141 @@ body {
     margin-top: 100px;
 }
 
+/*FOOTER*/
+
+.footer {
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.footer .container {
+    box-sizing: border-box;
+    padding: 20px 100px 165px 100px;
+    background-color: #000000;
+}
+
+.footer__animations__sushi {
+    text-align: right;
+    padding: 0 50px 0 50px;
+}
+
+.footer__animations__sushi > img {
+    display: inline-block;
+}
+
+.footer__describe {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 195px;
+}
+
+.footer__describe__main {
+    max-width: 425px;
+    padding-right: 30px;
+}
+
+.footer__describe__main__title > h4,
+.footer__describe__inner__about__title > h4,
+.footer__describe__inner__services__title > h4,
+.footer__describe__inner__other__title > h4 {
+    font-size: 30px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.footer__describe__main__social-networks {
+    display: flex;
+    margin-top: 40px;
+}
+
+.footer__describe__main__social-networks__link {
+    display: block;
+    border-radius: 50%;
+    width: 43px;
+    height: 43px;
+    line-height: 43px;
+    font-size: 25px;
+    background-color: #ffffff;
+    text-align: center;
+    margin-right: 20px;
+    color: #000000;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.footer__describe__main__social-networks__link:nth-child(1):hover {
+    background-color: #c32aa3;
+}
+
+.footer__describe__main__social-networks__link:nth-child(2):hover {
+    background-color: #3b5998;
+}
+
+.footer__describe__main__social-networks__link:nth-child(3):hover {
+    background-color: #1da1f2;
+}
+
+.footer__describe__main__social-networks__link:nth-child(4):hover {
+    background-color: #25d366;
+}
+
+.footer__describe__inner {
+    display: flex;
+    justify-content: space-between;
+    max-width: 630px;
+}
+
+.footer__describe__inner a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: all 0.3s ease-in-out;
+}
+
+.footer__describe__inner a:hover {
+    text-decoration: none;
+    color: #ffaf77;
+}
+
+.footer__describe__inner__about,
+.footer__describe__inner__services {
+    margin-right: 50px;
+}
+
+.footer__describe__inner__about__links,
+.footer__describe__inner__services__links,
+.footer__describe__inner__other__links {
+    margin: 20px 0 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer__describe__inner__about__link,
+.footer__describe__inner__services__link,
+.footer__describe__inner__other__link {
+    margin-top: 20px;
+}
+
+/*RESPONSIVE*/
+
+@media screen and (max-width: 1100px) {
+    .middle-part__inner__animation-sushi {
+        display: none;
+    }
+
+    .middle-part__inner {
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+
+    /*menu*/
+    .middle-part__cards {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 /*ANIMATIONS*/
 
 .down-up, .up-down, .spinner-1, .spinner-2, .right-left {
@@ -356,22 +472,26 @@ body {
 }
 
 @keyframes down-up {
-    from {
+    0% {
         top: 0;
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
     }
 
-    to {
+    100% {
         top: 70%;
     }
 }
 
 @keyframes up-down {
-    from {
+    0% {
         top: 70%;
     }
 
-    to {
+    100% {
         top: 0;
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
     }
 }
 
