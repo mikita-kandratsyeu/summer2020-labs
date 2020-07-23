@@ -103,10 +103,28 @@ function allKeys(obj) {
     result.push(key);
   }
 
-  return result;
+  return result.concat(Object.getOwnPropertySymbols(obj));
 }
 
-console.log(allKeys(obj2));
+/**
+ * Example - 3
+ * @type {{a: string, __proto__: {e: string, f: string, g: string, h: string},
+ * b: string, c: string, d: string}}
+ */
+
+const obj3 = {
+  a: '1',
+  b: '2',
+  c: '3',
+  d: '4',
+  __proto__: obj1,
+};
+
+obj3[Symbol('i')] = 9;
+obj3[Symbol('j')] = 10;
+
+
+console.log(allKeys(obj3));
 
 /**
  * @description Custom implementation of the function Object.values
@@ -186,11 +204,11 @@ function functions(obj) {
 }
 
 /**
- * Example - 3
+ * Example - 4
  * @type {{getName(): obj3.name, year: number, name: string, displayInfo(): void, sayHi(): void}}
  */
 
-const obj3 = {
+const obj4 = {
   name: 'Mikita',
   sayHi() {
     console.log('Hi everyone!');
@@ -204,7 +222,7 @@ const obj3 = {
   year: 1998,
 };
 
-console.log(functions(obj3));
+console.log(functions(obj4));
 
 /**
  * @description Custom implementation of the function Function.prototype.bind
@@ -224,7 +242,7 @@ function bind(func, context) {
 }
 
 /**
- * Example - 4
+ * Example - 5
  * @type {{firstName: string, surName: string}}
  */
 const person = {
@@ -233,7 +251,7 @@ const person = {
 };
 
 /**
- * Example - 5
+ * Example - 6
  * @param city
  * @param year
  */
