@@ -29,6 +29,8 @@ body {
     height: 125px;
     position: relative;
     z-index: 2;
+    font-size: 20px;
+    color: #ffffff;
     background-color: rgba(255, 127, 127, 0.8);
 }
 
@@ -42,12 +44,24 @@ body {
     text-transform: uppercase;
 }
 
+.nav-menu__logo {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
 .nav-menu__logo__link {
     display: block;
     height: 83px;
     width: 107px;
     background-image: url("../images/brand.png");
     background-repeat: no-repeat;
+}
+
+.nav-menu__menu {
+
+    /*TEMP*/
+    display: none;
 }
 
 .nav-menu__menu__link {
@@ -59,14 +73,32 @@ body {
     transition: all 0.3s ease-in-out;
 }
 
+.nav-menu__search {
+    display: none;
+}
+
 .nav-menu__search__link {
     color: #ffffff;
-    font-size: 20px;
     transition: all 0.3s ease-in-out;
 }
 
-.nav-menu__menu__link:hover, .nav-menu__search__link:hover {
+.nav-menu__menu__link:hover,
+.nav-menu__search__link:hover {
     color: #ffaf77;
+}
+
+.nav-menu__responsive-menu__label {
+    display: block;
+    text-align: right;
+}
+
+.nav-menu__responsive-menu__label > input {
+    display: none;
+}
+
+.nav-menu__responsive-menu__menu__links {
+    display: flex;
+    flex-direction: column;
 }
 
 /*TOP-PART*/
@@ -193,6 +225,7 @@ body {
 
 .bottom-part__inner__describe {
     max-width: 550px;
+    padding: 0 0 0 45px;
 }
 
 .bottom-part__inner__describe__title {
@@ -513,11 +546,11 @@ body {
 
 @keyframes right-left {
 
-    from {
+    0% {
         left: 20%;
     }
 
-    to {
+    100% {
         left: 60%;
         transform: rotate(360deg);
     }
