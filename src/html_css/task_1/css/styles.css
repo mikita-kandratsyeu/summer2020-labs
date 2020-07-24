@@ -26,6 +26,11 @@ body {
     border-radius: 45px;
 }
 
+.line-fix {
+    position: relative;
+    margin-top: -1px;
+}
+
 /*NAV-MENU*/
 
 .nav-menu {
@@ -622,7 +627,66 @@ body {
         flex-direction: column;
         align-items: center;
     }
+
+    .bottom-part__inner {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bottom-part__inner__picture,
+    .bottom-part__inner__description__title {
+        margin-bottom: 30px;
+    }
+
+    .bottom-part__inner__description {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bottom-part__inner__description__text,
+    .subscribe-part__description__text {
+        text-align: center;
+        width: 100%;
+    }
+
+    .footer__description {
+        flex-direction: column;
+        justify-content: initial;
+    }
+
+    .footer__description__main {
+        margin-bottom: 60px;
+    }
+
+    .footer__description__inner {
+        max-width: none;
+
+    }
 }
+
+@media screen and (max-width: 767px) {
+    .top-part__description {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .top-part__description__title,
+    .top-part__description__text {
+        width: 100%;
+        text-align: center;
+    }
+
+    .subscribe-part__description__form {
+        width: 540px;
+    }
+}
+
+/*@media screen and (max-width: 480px) {*/
+/*    */
+/*}*/
 
 /*ANIMATIONS*/
 
