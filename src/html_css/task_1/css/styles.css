@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #ff7f7f;
+    /*background-color: #ff7f7f;*/
 }
 
 .container {
@@ -705,6 +705,10 @@ body {
         padding: 265px 60px 422px 60px;
     }
 
+    .bottom-part__inner__description {
+        max-width: 450px;
+    }
+
     .subscribe-part__description__title {
         font-size: 40px;
     }
@@ -755,7 +759,7 @@ body {
     .middle-part__description__title,
     .subscribe-part__description__title,
     .bottom-part__inner__description__title {
-        font-size: 30px;
+        font-size: 20px;
     }
 
     .middle-part > .container {
@@ -766,6 +770,11 @@ body {
         padding: 125px 30px 25px 30px;
     }
 
+    .bottom-part__inner__description {
+        max-width: 350px;
+    }
+
+
     .bottom-part__inner__picture > img {
         width: 300px;
         height: 300px;
@@ -774,7 +783,6 @@ body {
     .subscribe-part > .container {
         padding: 5px 30px 130px 30px;
     }
-
 
     .footer > .container {
         padding: 20px 30px 165px 30px;
@@ -787,6 +795,10 @@ body {
     .subscribe-part__description__form,
     .subscribe-part__description__form__button {
         width: 280px;
+    }
+
+    .bottom-part__inner__description {
+        max-width: 300px;
     }
 }
 
