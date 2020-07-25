@@ -636,6 +636,7 @@ body {
     .bottom-part__inner__picture,
     .bottom-part__inner__description__title {
         margin-bottom: 30px;
+        text-align: center;
     }
 
     .bottom-part__inner__description {
