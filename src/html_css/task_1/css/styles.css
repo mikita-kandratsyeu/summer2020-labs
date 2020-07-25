@@ -6,7 +6,6 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    /*background-color: #ff7f7f;*/
 }
 
 .container {
@@ -294,7 +293,6 @@ body {
 }
 
 .bottom-part > .container {
-    /*box-sizing: border-box;*/
     padding: 125px 100px 25px 100px;
     background-color: #ffffff;
 }
@@ -526,7 +524,6 @@ body {
 .footer__description__inner__services__links,
 .footer__description__inner__other__links {
     margin: 20px 0 0 0;
-    /*padding: 0;*/
     list-style: none;
 }
 
@@ -663,7 +660,6 @@ body {
 
     .footer__description__inner {
         max-width: none;
-
     }
 }
 
@@ -717,7 +713,6 @@ body {
         width: 365px;
         height: 365px;
     }
-
 
     .bottom-part__animations__sushi:last-child {
         display: none;
