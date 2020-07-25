@@ -430,7 +430,7 @@ body {
     font-size: 20px;
 }
 
-.footer .container {
+.footer > .container {
     padding: 20px 100px 165px 100px;
     background-color: #000000;
 }
@@ -550,7 +550,7 @@ body {
 
 @media screen and (max-width: 991px) {
 
-    .nav-menu .container {
+    .nav-menu > .container {
         display: flex;
         justify-content: flex-start;
     }
@@ -604,7 +604,7 @@ body {
 
     .nav-menu__responsive__links__link > a {
         display: block;
-        padding: 30px 0;
+        padding: 20px 0;
         text-decoration: none;
         text-align: center;
         color: #ffffff;
@@ -684,9 +684,116 @@ body {
     }
 }
 
-/*@media screen and (max-width: 480px) {*/
-/*    */
-/*}*/
+@media screen and (max-width: 675px) {
+    .footer__description__inner {
+        flex-direction: column;
+    }
+
+    .footer__description__inner__services__title,
+    .footer__description__inner__other__title {
+        margin-top: 60px;
+    }
+
+    .top-part__description__title {
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .top-part > .container {
+        padding: 265px 60px 422px 60px;
+    }
+
+    .subscribe-part__description__title {
+        font-size: 40px;
+    }
+
+    .bottom-part__inner__picture > img {
+        width: 365px;
+        height: 365px;
+    }
+
+
+    .bottom-part__animations__sushi:last-child {
+        display: none;
+    }
+
+    .subscribe-part__description__form {
+        width: 315px;
+    }
+
+    .subscribe-part__description__form__button {
+        position: relative;
+        left: 50%;
+        margin-top: 30px;
+        width: 315px;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+    }
+
+    .subscribe-part__animations__sushi {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .nav-menu > .container {
+        padding: 20px 30px;
+    }
+
+    .toggle-menu__container,
+    #check {
+        right: 30px;
+    }
+
+    .top-part > .container {
+        padding: 265px 30px 422px 30px;
+    }
+
+    .top-part__description__title,
+    .middle-part__description__title,
+    .subscribe-part__description__title,
+    .bottom-part__inner__description__title {
+        font-size: 30px;
+    }
+
+    .middle-part > .container {
+        padding: 150px 30px 50px 30px;
+    }
+
+    .bottom-part > .container {
+        padding: 125px 30px 25px 30px;
+    }
+
+    .bottom-part__inner__picture > img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .subscribe-part > .container {
+        padding: 5px 30px 130px 30px;
+    }
+
+
+    .footer > .container {
+        padding: 20px 30px 165px 30px;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .top-part__description__button,
+    .bottom-part__inner__description__button,
+    .subscribe-part__description__form,
+    .subscribe-part__description__form__button {
+        width: 280px;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .container {
+        min-width: 320px;
+    }
+}
 
 /*ANIMATIONS*/
 
