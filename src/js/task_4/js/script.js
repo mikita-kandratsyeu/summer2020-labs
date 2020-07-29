@@ -58,3 +58,33 @@ document.querySelector('#btn-2').addEventListener('click', () => {
   al.run(); // Alex is running
   al.eat(); // Alex is eating
 });
+
+/**
+ * Task - 2
+ * @description - Assign prototypes in a way that any property lookup will follow the
+ * path: webdev → architect → fullstack → junior.
+ */
+
+const junior = {
+  experience: 1,
+};
+
+const fullstack = {
+  salary: 3000,
+};
+
+const architect = {
+  knowledge: 100500,
+};
+
+const webdev = {
+  efficiency: 100,
+};
+
+/**
+ * Solution
+ */
+
+Object.setPrototypeOf(webdev, architect);
+Object.setPrototypeOf(architect, fullstack);
+Object.setPrototypeOf(fullstack, junior);

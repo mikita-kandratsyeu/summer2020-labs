@@ -24,9 +24,11 @@
     <label class="container-title" for="input_1">Task - 1</label>
     <div class="container-text">
       <h3>Task: </h3>
+
       <p>Implement function <strong>'spawn'</strong>, which will take Constructor and arguments and return
         a new object, same as if we used <strong>'new'</strong> keyword;
       </p>
+
       <pre class="prettyprint">
 const Mammal = {
   eat() {
@@ -60,6 +62,7 @@ const al2 = spawn(Man, 'Alex', 29);
       </pre>
 
       <h3>Solution: </h3>
+
       <pre class="prettyprint">
 function spawn(constructor, ...rest) {
   const tmp = {};
@@ -83,9 +86,40 @@ function spawn(constructor, ...rest) {
     <input class="container-input" type="checkbox" id="input_2">
     <label class="container-title" for="input_2">Task - 2</label>
     <div class="container-text">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores eum, ipsum. Voluptatum deleniti ut ipsa
-        blanditiis, modi facere distinctio impedit illum fugiat ex vel, quasi sit, explicabo veniam nemo
-        reprehenderit!</p>
+      <h3>Task: </h3>
+      <p>Given the following objects: </p>
+
+      <pre class="prettyprint">
+let junior = {
+ experience: 1,
+};
+
+let fullstack = {
+ salary: 3000
+};
+
+let architect = {
+ knowledge: 100500
+};
+
+let webdev = {
+ efficiency: 100
+};
+      </pre>
+
+      <p>Assign prototypes in a way that any property lookup will follow the
+        path: <strong>webdev → architect → fullstack → junior</strong>.
+      </p>
+
+      <h3>Solution:</h3>
+
+      <pre class="prettyprint">
+Object.setPrototypeOf(webdev, architect);
+Object.setPrototypeOf(architect, fullstack);
+Object.setPrototypeOf(fullstack, junior);
+      </pre>
+
+      <p>P.S: Check it in the console!</p>
     </div>
   </article>
 
@@ -93,9 +127,26 @@ function spawn(constructor, ...rest) {
     <input class="container-input" type="checkbox" id="input_3">
     <label class="container-title" for="input_3">Task - 3</label>
     <div class="container-text">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores eum, ipsum. Voluptatum deleniti ut ipsa
-        blanditiis, modi facere distinctio impedit illum fugiat ex vel, quasi sit, explicabo veniam nemo
-        reprehenderit!</p>
+
+      <h3>Task: </h3>
+
+      <p>Change the code, so that alerting any object will output it’s own properties, e.g: </p>
+
+      <pre class="prettyprint">
+const obj = {
+ prop1: 1,
+ prop2: 2,
+ prop3: 3,
+}
+
+alert(obj) // prop1: 1, prop2: 2, prop3: 3
+      </pre>
+
+      <h3>Solution: </h3>
+
+      <pre class="prettyprint">
+
+      </pre>
     </div>
   </article>
 
