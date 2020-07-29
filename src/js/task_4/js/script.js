@@ -117,3 +117,40 @@ Object.prototype.toString = () => {
 document.querySelector('#btn-3').addEventListener('click', () => {
   alert(obj); // prop1: 1 prop2: 2 prop3: 3
 });
+
+/**
+ * Task - 4
+ * @description - Add to the prototype of all functions the method delay(ms),
+ * that returns a wrapper, delaying the call by ms milliseconds, e.g:
+ */
+
+function add(a, b) {
+  alert(a + b);
+}
+
+/**
+ * Solution
+ */
+
+Function.prototype.delay = function (ms) {
+  return (a, b) => {
+    setTimeout(() => this(a, b), ms);
+  };
+};
+
+document.querySelector('#btn-4').addEventListener('click', () => {
+  add.delay(1000)(1, 2); // shows 3 after 1 second
+});
+
+/**
+ * Task - 5
+ * @description - Implement following objects, using COMPOSITION approach.
+ * Vehicle – starts, moves
+ * Car – starts, moves, honks,
+ * Tank – starts, moves, shoots,
+ * Bicycle – moves
+ */
+
+/**
+ * Solution
+ */
