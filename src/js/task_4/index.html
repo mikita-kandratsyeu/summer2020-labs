@@ -19,6 +19,8 @@
 </header>
 <section class="container">
 
+  <!-- TASK-1 -->
+
   <article class="container-item">
     <input class="container-input" type="checkbox" id="input_1">
     <label class="container-title" for="input_1">Task - 1</label>
@@ -82,6 +84,8 @@ function spawn(constructor, ...rest) {
     </div>
   </article>
 
+  <!-- TASK-2 -->
+
   <article class="container-item">
     <input class="container-input" type="checkbox" id="input_2">
     <label class="container-title" for="input_2">Task - 2</label>
@@ -123,6 +127,8 @@ Object.setPrototypeOf(fullstack, junior);
     </div>
   </article>
 
+  <!-- TASK-3 -->
+
   <article class="container-item">
     <input class="container-input" type="checkbox" id="input_3">
     <label class="container-title" for="input_3">Task - 3</label>
@@ -137,7 +143,7 @@ const obj = {
  prop1: 1,
  prop2: 2,
  prop3: 3,
-}
+};
 
 alert(obj) // prop1: 1, prop2: 2, prop3: 3
       </pre>
@@ -145,10 +151,24 @@ alert(obj) // prop1: 1, prop2: 2, prop3: 3
       <h3>Solution: </h3>
 
       <pre class="prettyprint">
+Object.prototype.toString = () => {
+  let tmp = '';
 
+  Object.keys(obj).forEach((item) => {
+    tmp += `${item}: ${obj[item]}, `;
+  });
+
+  return tmp;
+};
       </pre>
+
+      <div class="btn-group">
+        <button class="button" id="btn-3">Execute</button>
+      </div>
     </div>
   </article>
+
+  <!-- TASK-4 -->
 
   <article class="container-item">
     <input class="container-input" type="checkbox" id="input_4">
@@ -160,6 +180,8 @@ alert(obj) // prop1: 1, prop2: 2, prop3: 3
 
     </div>
   </article>
+
+  <!-- TASK-5 -->
 
   <article class="container-item">
     <input class="container-input" type="checkbox" id="input_5">

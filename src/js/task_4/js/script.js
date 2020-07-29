@@ -88,3 +88,32 @@ const webdev = {
 Object.setPrototypeOf(webdev, architect);
 Object.setPrototypeOf(architect, fullstack);
 Object.setPrototypeOf(fullstack, junior);
+
+/**
+ * Task - 3
+ * @description - Change the code, so that alerting any object will output it’s own properties, e.g:
+ */
+
+const obj = {
+  prop1: 1,
+  prop2: 2,
+  prop3: 3,
+};
+
+/**
+ * Solution
+ */
+
+Object.prototype.toString = () => {
+  let tmp = '';
+
+  Object.keys(obj).forEach((item) => {
+    tmp += `${item}: ${obj[item]}, `;
+  });
+
+  return tmp;
+};
+
+document.querySelector('#btn-3').addEventListener('click', () => {
+  alert(obj); // prop1: 1 prop2: 2 prop3: 3
+});
