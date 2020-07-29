@@ -154,3 +154,78 @@ document.querySelector('#btn-4').addEventListener('click', () => {
 /**
  * Solution
  */
+
+const starts = (self) => ({
+  starts: () => alert(`${self.name} starts!`),
+});
+
+const moves = (self) => ({
+  moves: () => alert(`${self.name} moves!`),
+});
+
+const shoots = (self) => ({
+  shoots: () => alert(`${self.name} shoots!`),
+});
+
+const honks = (self) => ({
+  honks: () => alert(`${self.name} honks!`),
+});
+
+const Vehicle = (name) => {
+  const vehicle = {
+    name,
+  };
+
+  return {
+    ...vehicle,
+    ...starts(vehicle),
+    ...moves(vehicle),
+  };
+};
+
+const Car = (name) => {
+  const car = {
+    name,
+  };
+
+  return {
+    ...car,
+    ...starts(car),
+    ...moves(car),
+    ...honks(car),
+  };
+};
+
+const Tank = (name) => {
+  const tank = {
+    name,
+  };
+
+  return {
+    ...tank,
+    ...starts(tank),
+    ...moves(tank),
+    ...shoots(tank),
+  };
+};
+
+const Bicycle = (name) => {
+  const bicycle = {
+    name,
+  };
+
+  return {
+    ...bicycle,
+    ...moves(bicycle),
+  };
+};
+
+document.querySelector('#btn-5').addEventListener('click', () => {
+// Some examples
+  const bmx = Bicycle('bmx');
+  bmx.moves();
+
+  const porsche = Car('Porsche 911');
+  porsche.honks();
+  porsche.starts();
+});
