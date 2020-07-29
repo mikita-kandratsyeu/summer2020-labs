@@ -11,18 +11,114 @@
   <title>js-task-4</title>
 
   <script src="js/script.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js" defer></script>
 </head>
 <body>
-<pre>
+<header class="header">
+  <h1>Js-task-4</h1>
+</header>
+<section class="container">
+
+  <article class="container-item">
+    <input class="container-input" type="checkbox" id="input_1">
+    <label class="container-title" for="input_1">Task - 1</label>
+    <div class="container-text">
+      <h3>Task: </h3>
+      <p>Implement function <strong>'spawn'</strong>, which will take Constructor and arguments and return
+        a new object, same as if we used <strong>'new'</strong> keyword;
+      </p>
+      <pre class="prettyprint">
+const Mammal = {
+  eat() {
+    alert(`${this.name} is eating`);
+  },
+};
+const Human = {
+  run() {
+    alert(`${this.name} is running`);
+  },
+};
+
+function Man(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+Man.prototype = {
+  ...Mammal,
+  ...Human,
+};
+
+const al = new Man('Alex', 29);
+al.name; // 'Alex'
+al.age; // 29
+al.run(); // Alex is running
+al.eat(); // Alex is eating
+
+const al2 = spawn(Man, 'Alex', 29);
+// same as al
+      </pre>
+
+      <h3>Solution: </h3>
+      <pre class="prettyprint">
 function spawn(constructor, ...rest) {
   const tmp = {};
-dfgdfgdf
+
   constructor.call(tmp, ...rest);
-dfg
+
   Object.setPrototypeOf(tmp, constructor.prototype);
 
   return tmp;
 }
-</pre>
+      </pre>
+
+      <div class="btn-group">
+        <button class="button" id="btn-1">Execute with 'new'</button>
+        <button class="button" id="btn-2">Execute with 'spawn'</button>
+      </div>
+    </div>
+  </article>
+
+  <article class="container-item">
+    <input class="container-input" type="checkbox" id="input_2">
+    <label class="container-title" for="input_2">Task - 2</label>
+    <div class="container-text">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores eum, ipsum. Voluptatum deleniti ut ipsa
+        blanditiis, modi facere distinctio impedit illum fugiat ex vel, quasi sit, explicabo veniam nemo
+        reprehenderit!</p>
+    </div>
+  </article>
+
+  <article class="container-item">
+    <input class="container-input" type="checkbox" id="input_3">
+    <label class="container-title" for="input_3">Task - 3</label>
+    <div class="container-text">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores eum, ipsum. Voluptatum deleniti ut ipsa
+        blanditiis, modi facere distinctio impedit illum fugiat ex vel, quasi sit, explicabo veniam nemo
+        reprehenderit!</p>
+    </div>
+  </article>
+
+  <article class="container-item">
+    <input class="container-input" type="checkbox" id="input_4">
+    <label class="container-title" for="input_4">Task - 4</label>
+    <div class="container-text">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores eum, ipsum. Voluptatum deleniti ut ipsa
+        blanditiis, modi facere distinctio impedit illum fugiat ex vel, quasi sit, explicabo veniam nemo
+        reprehenderit!</p>
+
+    </div>
+  </article>
+
+  <article class="container-item">
+    <input class="container-input" type="checkbox" id="input_5">
+    <label class="container-title" for="input_5">Task - 5</label>
+    <div class="container-text">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores eum, ipsum. Voluptatum deleniti ut ipsa
+        blanditiis, modi facere distinctio impedit illum fugiat ex vel, quasi sit, explicabo veniam nemo
+        reprehenderit!</p>
+    </div>
+  </article>
+</section>
 </body>
 </html>
