@@ -454,8 +454,8 @@ body {
     padding-right: 30px;
 }
 
-.footer__description__main__title > h4,
-.footer__description__inner__about__title > h4,
+.footer__main-title > h4,
+.footer__about-title > h4,
 .footer__services-title > h4,
 .footer__other-title > h4 {
     font-size: 30px;
