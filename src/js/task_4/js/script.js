@@ -100,15 +100,23 @@ const obj = {
   prop3: 3,
 };
 
+obj[Symbol('prop4')] = 4;
+
 /**
  * Solution
  */
 
-Object.prototype.toString = () => {
+Object.prototype.toString = function () {
   let tmp = '';
 
-  Object.keys(obj).forEach((item) => {
-    tmp += `${item}: ${obj[item]}, `;
+  const symbolCollection = Object.getOwnPropertySymbols(this);
+
+  Object.keys(this).forEach((item) => {
+    tmp += `${item}: ${this[item]}, `;
+  });
+
+  symbolCollection.forEach((item) => {
+    tmp += `${item.toString()}: ${this[item]}, `;
   });
 
   return tmp;
@@ -160,15 +168,21 @@ const starts = (self) => ({
 });
 
 const moves = (self) => ({
-  moves: () => alert(`${self.name} moves!`),
+  moves: () => alert(
+    `${self.name} moves!`,
+  ),
 });
 
 const shoots = (self) => ({
-  shoots: () => alert(`${self.name} shoots!`),
+  shoots: () => alert(
+    `${self.name} shoots!`,
+  ),
 });
 
 const honks = (self) => ({
-  honks: () => alert(`${self.name} honks!`),
+  honks: () => alert(
+    `${self.name} honks!`,
+  ),
 });
 
 const Vehicle = (name) => {

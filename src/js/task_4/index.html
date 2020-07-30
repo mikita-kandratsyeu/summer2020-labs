@@ -154,8 +154,14 @@ alert(obj) // prop1: 1, prop2: 2, prop3: 3
 Object.prototype.toString = () => {
   let tmp = '';
 
-  Object.keys(obj).forEach((item) => {
-    tmp += `${item}: ${obj[item]}, `;
+  const symbolCollection = Object.getOwnPropertySymbols(this);
+
+  Object.keys(this).forEach((item) => {
+    tmp += `${item}: ${this[item]}, `;
+  });
+
+  symbolCollection.forEach((item) => {
+    tmp += `${item.toString()}: ${this[item]}, `;
   });
 
   return tmp;
