@@ -266,25 +266,25 @@ console.log(binarySearch([4, 1, 1, 4, 2, 3, 4, 4, 1, 2, 4, 9, 3], 9));
 console.log('\n== Task-8 ==\n');
 
 const selectionSort = (array) => {
-  const arr = array;
+  const tempArray = array;
 
-  const len = arr.length;
+  const len = tempArray.length;
 
   for (let i = 0; i < len - 1; i += 1) {
     let min = i;
 
     for (let j = i + 1; j < len; j += 1) {
-      if (arr[j] < arr[min]) {
+      if (tempArray[j] < tempArray[min]) {
         min = j;
       }
 
-      const value = arr[min];
-      arr[min] = arr[i];
-      arr[i] = value;
+      const value = tempArray[min];
+      tempArray[min] = tempArray[i];
+      tempArray[i] = value;
     }
   }
 
-  return arr;
+  return tempArray;
 };
 
 console.log(selectionSort([4, 1, 1, 4, 2, 3, 4, 4, 1, 2, 4, 9, 3]));
