@@ -36,21 +36,25 @@ const generateTwoDimensionalArray = (n) => {
 
 console.log('== Task-1 ==');
 
-const array1 = generateArray(10);
-console.log('Source array: ', array1);
+const findMax = (array) => Math.max(...array);
+
+const findMin = (array) => Math.min(...array);
+
+const getTotal = (array) => array.reduce((sum, current) => sum + current, 0);
+
+const getArithmeticMean = (array) => getTotal(array) / array.length;
 
 // The largest value
-console.log('Max:', Math.max(...array1));
+console.log('Max:', findMax(generateArray(10)));
 
 // The smallest value
-console.log('Min:', Math.min(...array1));
+console.log('Min:', findMin(generateArray(10)));
 
 // The total sum of the items
-const total = array1.reduce((sum, current) => sum + current, 0);
-console.log('Total:', total);
+console.log('Total:', getTotal(generateArray(10)));
 
 // The arithmetic mean of all items
-console.log('Arithmetic mean:', total / array1.length);
+console.log('Arithmetic mean:', getArithmeticMean(generateArray(10)));
 
 
 /**
@@ -84,7 +88,8 @@ console.log(array2);
 
 console.log('\n== Task-3 ==\n');
 
-const array3 = generateArray(20).map((item, idx) => idx * 5);
+const array3 = generateArray(20)
+  .map((item, idx) => idx * 5);
 
 console.log(array3);
 
@@ -153,7 +158,8 @@ const findMaxIncreasingSequence = (array) => {
     }
   }
 
-  const maxCollection = Object.values(config).map((item) => item.length);
+  const maxCollection = Object.values(config)
+    .map((item) => item.length);
 
   const max = Math.max(...maxCollection);
 
