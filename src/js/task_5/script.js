@@ -148,8 +148,8 @@ const findMaxIncreasingSequence = (array) => {
 
   let count = 0;
 
-  for (let i = 1; i < array.length; i += 1) {
-    if (array[i - 1] + 1 === array[i]) {
+  for (let i = 1; i <= array.length; i += 1) {
+    if (array[i] > array[i - 1]) {
       temp.push(array[i - 1]);
     } else {
       temp.push(array[i - 1]);
@@ -178,7 +178,7 @@ const findMaxIncreasingSequence = (array) => {
   return result;
 };
 
-console.log(findMaxIncreasingSequence([3, 2, 3, 4, 2, 2, 4]));
+console.log(findMaxIncreasingSequence([3, 2, 3, 1, 4, 2, 2, 4, 5]));
 
 /**
  * Task - 6
