@@ -66,19 +66,23 @@ console.log('Arithmetic mean:', getArithmeticMean(generateArray(10)));
 
 console.log('\n== Task-2 ==\n');
 
-const array2 = generateTwoDimensionalArray(5);
+const replaceNumbersOnTheMainDiagonal = (array) => {
+  const len = array.length;
 
-const lenArray2 = array2.length;
+  const tempArray = array;
 
-for (let i = 0; i < lenArray2; i += 1) {
-  for (let j = 0; j < lenArray2; j += 1) {
-    if (i === j) {
-      array2[i][j] = array2[i][j] < 0 ? 10 : 20;
+  for (let i = 0; i < len; i += 1) {
+    for (let j = 0; j < len; j += 1) {
+      if (i === j) {
+        tempArray[i][j] = tempArray[i][j] < 0 ? 10 : 20;
+      }
     }
   }
-}
 
-console.log(array2);
+  return tempArray;
+};
+
+console.log(replaceNumbersOnTheMainDiagonal(generateTwoDimensionalArray(5)));
 
 /**
  * Task - 3
@@ -88,10 +92,9 @@ console.log(array2);
 
 console.log('\n== Task-3 ==\n');
 
-const array3 = generateArray(20)
-  .map((item, idx) => idx * 5);
+const multiplyByFive = (array) => array.map((item, idx) => idx * 5);
 
-console.log(array3);
+console.log(multiplyByFive(generateArray(20)));
 
 /**
  * Task - 4
