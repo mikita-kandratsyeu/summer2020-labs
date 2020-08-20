@@ -1,5 +1,5 @@
 /**
- * Task -1
+ * Task - 1
  * @description: Write a script that selects all the div nodes that are
  * directly inside other div elements:
  * 1. Create a function using querySelectorAll()
