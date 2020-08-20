@@ -155,7 +155,24 @@ body {
   cursor: pointer;
 }
 
+.content__task-5 {
+  position: relative;
 
+  margin: 15px 0;
+  padding: 10px;
 
+  height: 65vh;
+}
+
+.content__task-5 > div {
+  position: absolute;
+
+  width: 30px;
+  height: 30px;
+
+  background-color: #ffaf77;
+
+  border-radius: 50%;
+}
 
 
