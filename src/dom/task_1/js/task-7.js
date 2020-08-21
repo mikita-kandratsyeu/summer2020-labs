@@ -26,9 +26,7 @@ function generateTagCloud(tags, min, max) {
 
   const unit = Math.abs(max - min) / quantity;
 
-  return Object.keys(config).map((item) => {
-    return `<span style="font-size: ${unit * config[item] + min}px">${item}</span>`
-  }).join(' ');
+  return Object.keys(config).map((item) => `<span style="font-size: ${unit * config[item] + min}px">${item}</span>`).join(' ');
 }
 
 const tags = [
