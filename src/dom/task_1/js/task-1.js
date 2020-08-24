@@ -14,12 +14,14 @@ function viaSelectorAll() {
 }
 
 function viaElementsByTagName() {
-  const node = document.querySelector('#node');
+  const divs = document.getElementsByTagName('div');
 
-  const items = node.getElementsByTagName('div');
-
-  Object.keys(items)
-    .forEach((item) => items[item].classList.toggle('border-lightblue'));
+  Object.keys(divs)
+    .forEach((item) => {
+      if (divs[item].parentNode.tagName === 'DIV') {
+        divs[item].classList.toggle('border-lightblue');
+      }
+    });
 }
 
 document.querySelector('#task-1-btn-1')

@@ -5,195 +5,195 @@
 /*Bold 700*/
 
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 
-    box-sizing: border-box;
+  box-sizing: border-box;
 
-    font-family: 'Rubik', sans-serif;
+  font-family: 'Rubik', sans-serif;
 }
 
 body {
-    background-color: #000000;
-    color: #CCFF00;
+  background-color: #000000;
+  color: #CCFF00;
 }
 
 .main {
-    display: flex;
+  display: flex;
 
-    margin: 0 auto;
-    max-width: 1440px;
+  margin: 0 auto;
+  max-width: 1440px;
 }
 
 .content {
-    flex: 6;
+  flex: 6;
 
-    padding: 20px;
+  padding: 20px;
 }
 
 .aside {
-    flex: 1;
+  flex: 1;
 }
 
 .content__title {
-    font-size: 90px;
+  font-size: 90px;
 }
 
 .nav-menu__list {
-    list-style: none;
+  list-style: none;
 }
 
 .nav-menu__link {
-    display: block;
-    text-decoration: none;
-    text-align: center;
+  display: block;
+  text-decoration: none;
+  text-align: center;
 
-    padding: 20px;
+  padding: 20px;
 
-    font-size: 20px;
-    font-weight: 700;
+  font-size: 20px;
+  font-weight: 700;
 
-    color: #000000;
-    background-color: #CCFF00;
+  color: #000000;
+  background-color: #CCFF00;
 
-    transition: .2s all ease-in-out;
+  transition: .2s all ease-in-out;
 }
 
 .nav-menu__link:hover, .checked {
-    color: #CCFF00;
-    background-color: #000000;
+  color: #CCFF00;
+  background-color: #000000;
 }
 
 .content__btn-group {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .button {
-    outline: none;
-    border: 2px solid #CCFF00;
+  outline: none;
+  border: 2px solid #CCFF00;
 
-    padding: 15px;
-    margin: 0 10px;
+  padding: 15px;
+  margin: 0 10px;
 
-    font-weight: 700;
+  font-weight: 700;
 
-    background-color: transparent;
-    color: #ffffff;
+  background-color: transparent;
+  color: #ffffff;
 
-    transition: .2s all ease-in-out;
+  transition: .2s all ease-in-out;
 }
 
 .input {
-    outline: none;
+  outline: none;
 
-    margin: 15px 0;
-    padding: 10px;
+  margin: 15px 0;
+  padding: 10px;
 
-    color: #ffffff;
+  color: #ffffff;
 
-    background-color: transparent;
-    border: 2px solid #CCFF00;
+  background-color: transparent;
+  border: 2px solid #CCFF00;
 }
 
 #task-2-container {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .button:hover {
-    cursor: pointer;
+  cursor: pointer;
 
-    background-color: #ffffff;
-    border-color: transparent;
-    color: #000000;
+  background-color: #ffffff;
+  border-color: transparent;
+  color: #000000;
 }
 
 .content__task-1 {
-    padding: 20px;
+  padding: 20px;
 }
 
 .content__task-1 div {
-    padding: 20px;
-    margin: 20px 0;
+  padding: 20px;
+  margin: 20px 0;
 
-    border: 2px solid #CCFF00;
+  border: 2px solid #CCFF00;
 }
 
 .border-white {
-    border: 4px solid #ffffff !important;
+  border: 4px solid #ffffff !important;
 }
 
 .border-lightblue {
-    border: 4px solid #7AAEBD !important;
+  border: 4px solid #7AAEBD !important;
 }
 
 .content__task-4, .content__task-7 {
-    border: 2px solid #CCFF00;
+  border: 2px solid #CCFF00;
 
-    position: relative;
+  position: relative;
 
-    margin: 15px 0;
-    padding: 10px;
+  margin: 15px 0;
+  padding: 10px;
 
-    height: 65vh;
+  height: 65vh;
 }
 
 .content__task-4 > div {
-    position: absolute;
+  position: absolute;
 
-    padding: 5px;
+  padding: 5px;
 }
 
 #task-4-range {
-    outline: none;
+  outline: none;
 
-    height: 7px;
-    width: 356px;
+  height: 7px;
+  width: 356px;
 }
 
 #task-4-range:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .content__task-5 {
-    position: relative;
+  position: relative;
 
-    margin: 15px 0;
-    padding: 10px;
+  margin: 15px 0;
+  padding: 10px;
 
-    height: 65vh;
+  height: 65vh;
 }
 
 .content__task-5 > div {
-    position: absolute;
+  position: absolute;
 
-    width: 30px;
-    height: 30px;
+  width: 30px;
+  height: 30px;
 
-    background-color: #ffaf77;
+  background-color: #ffaf77;
 
-    border-radius: 50%;
+  border-radius: 50%;
 }
 
 .content__task-6 {
-    display: flex;
+  display: flex;
 }
 
 #task-6-text {
-    padding: 10px;
+  padding: 10px;
 
-    line-height: 1.5;
+  line-height: 1.5;
 
-    border: 2px solid #CCFF00;
+  border: 2px solid #CCFF00;
 
-    background-color: #000000;
-    color: #CCFF00;
+  background-color: #000000;
+  color: #CCFF00;
 }
 
 .color-group {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
