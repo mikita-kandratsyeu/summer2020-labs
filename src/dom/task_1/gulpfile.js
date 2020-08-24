@@ -10,9 +10,11 @@ const watch = () => {
   });
   gulp.watch('./*.html')
     .on('change', sync.reload);
-  gulp.watch('./css/*.css')
+  gulp.watch('pages/*.html')
     .on('change', sync.reload);
-  gulp.watch('./js/*.js')
+  gulp.watch('css/*.css')
+    .on('change', sync.reload);
+  gulp.watch('js/*.js')
     .on('change', sync.reload);
 };
 
