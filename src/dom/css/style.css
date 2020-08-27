@@ -73,8 +73,8 @@ body {
   outline: none;
   border: 2px solid #CCFF00;
 
-  padding: 15px;
-  margin: 0 10px;
+  padding: 10px;
+  margin: 10px 10px;
 
   font-weight: 700;
 
@@ -233,7 +233,7 @@ body {
   width: auto;
 
   padding: 15px;
-  margin-top: -22px;
+  margin-top: -40px;
 
   font-weight: bold;
   font-size: 30px;
@@ -251,6 +251,7 @@ body {
 
 .prev:hover, .next:hover {
   opacity: 0.8;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .counter {
@@ -269,8 +270,24 @@ body {
   width: 100%;
   text-align: center;
 
+  background-color: rgba(0, 0, 0, 0.8);
+
   padding: 8px 12px;
 
   font-size: 14px;
   font-weight: bold;
+}
+
+.list {
+  list-style: none;
+
+  margin: 10px 0;
+}
+
+.list > li {
+  margin: 10px 0;
+}
+
+.list > li > label {
+  margin: 0 10px;
 }

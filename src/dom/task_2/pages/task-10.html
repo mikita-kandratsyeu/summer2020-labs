@@ -8,55 +8,32 @@
 
   <link rel="stylesheet" href="../../css/style.css">
 
-  <script src="../js/task-9.js" defer></script>
+  <script src="../js/task-10.js" defer></script>
 
-  <title>Task-9</title>
+  <title>Task-10</title>
 </head>
 <body>
 <main class="main">
   <section class="content">
     <h2>Task:</h2>
-    <p>Create a Simple JS Carousel with N images and two arrows for image control</p>
+    <p>Create a TODO list with the following UI controls</p>
+    <p>- Form input for new Item<br />
+      - Button for adding the new Item<br />
+      - Button for deleting some item<br />
+      - "Show all items" and "Hide item" Buttons
+    </p>
 
-    <article class="content__task-9">
-      <div class="images">
-        <div class="counter"> 1 / 1</div>
-        <img
-          src="https://fastly.4sqi.net/img/general/699x268/R69VKDw1QoGZ2mY8EjkhvYsMbSGrdagnbh51KuHa89s.jpg"
-          alt="image"
-        />
-        <div class="description">Twin Peaks Summit</div>
-      </div>
+    <article class="content__task-10">
+      <label>Add item:
+        <input class="input" type="text" placeholder="Write something">
+      </label>
+      <button class="button" data-action="add">Add</button>
 
-      <div class="images">
-        <div class="counter"> 1 / 2</div>
-        <img
-          src="https://fastly.4sqi.net/img/general/699x268/52455040_uNyoKVakKKSbYe_ePzw_7p56Ja3FK_PpXdnKa18QlT4.jpg"
-          alt="image"
-        />
-        <div class="description">Mission Dolores Park</div>
-      </div>
+      <ul class="list"></ul>
 
-      <div class="images">
-        <div class="counter"> 1 / 3</div>
-        <img
-          src="https://fastly.4sqi.net/img/general/699x268/186753_bXWfu1hl2seDr5TizbL0X-3EuuNWkKLKoDnmJ_YgvwE.jpg"
-          alt="image"
-        />
-        <div class="description">Lands End</div>
-      </div>
-
-      <div class="images">
-        <div class="counter"> 1 / 4</div>
-        <img
-          src="https://fastly.4sqi.net/img/general/699x268/35447144_dvTiCz6KF2nGmZpVdGH5I5VgV-HHOP90X1ptwA2_J_M.jpg"
-          alt="image"
-        />
-        <div class="description">Alamo Square</div>
-      </div>
-
-      <a class="prev" data-action="prev">&#10094;</a>
-      <a class="next" data-action="next">&#10095;</a>
+      <button class="button" data-action="remove">Remove items</button>
+      <button class="button" data-action="hide">Hide items</button>
+      <button class="button" data-action="showAll">Show all items</button>
     </article>
   </section>
 
@@ -91,10 +68,10 @@
           <a href="task-8.html" class="nav-menu__link">Task 8</a>
         </li>
         <li class="nav-menu__item">
-          <a href="task-9.html" class="nav-menu__link checked">Task 9</a>
+          <a href="task-9.html" class="nav-menu__link">Task 9</a>
         </li>
         <li class="nav-menu__item">
-          <a href="task-10.html" class="nav-menu__link">Task 10</a>
+          <a href="task-10.html" class="nav-menu__link checked">Task 10</a>
         </li>
       </ul>
     </nav>
