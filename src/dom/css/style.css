@@ -207,6 +207,10 @@ body {
   margin: 0 25px;
 }
 
+.content__task-8 > ul > li:hover {
+  cursor: pointer;
+}
+
 .hidden {
   display: none;
 }
