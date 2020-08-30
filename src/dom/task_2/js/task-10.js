@@ -12,9 +12,11 @@ const list = document.querySelector('.list');
 let idx = 0;
 
 function addItem() {
-  const value = document.querySelector('input[type="text"]');
+  const element = document.querySelector('.input');
 
-  if (!value.value.length) {
+  const { value } = element;
+
+  if (!value.length) {
     return;
   }
 
@@ -28,13 +30,14 @@ function addItem() {
   input.id = id;
   label.htmlFor = id;
 
-  label.appendChild(document.createTextNode(`${value.value}`));
+  label.appendChild(document.createTextNode(`${value}`));
 
   li.appendChild(input);
   li.appendChild(label);
 
   list.appendChild(li);
 
+  element.value = '';
   idx += 1;
 }
 
