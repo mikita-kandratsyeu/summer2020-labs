@@ -40,16 +40,11 @@ function showImages(n) {
     idx = len;
   }
 
-  // Object.keys(images)
-  //   .forEach((item) => images[item].setAttribute('style', 'display: none'));
-  //
-  // images[imageIdx - 1].setAttribute('style', 'display: block');
-
   const { url, description } = store[idx];
 
-  counter.innerHTML = `${idx + 1} / ${len}`;
+  counter.textContent = `${idx + 1} / ${len}`;
   image.setAttribute('src', url);
-  descriptionElement.innerHTML = description;
+  descriptionElement.textContent = description;
 }
 
 function plusImage(n) {
