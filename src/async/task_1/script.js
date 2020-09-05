@@ -1,5 +1,10 @@
-const root = document.querySelector('#root');
-const textContainer = document.querySelector('#text-container');
+const root = document.querySelector('body');
+
+const taskFirst = document.querySelector('#task-1');
+const taskSecond = document.querySelector('#task-2');
+const taskThird = document.querySelector('#task-3');
+
+const textContent = document.querySelector('#text-content');
 
 const generateDomElements = () => {
   const text = document.createElement('input');
@@ -28,7 +33,19 @@ const generateDomElements = () => {
   buttonAsync.setAttribute('data-action', 'async');
   buttonAsync.setAttribute('value', 'Async/Await');
 
-  root.append(text, number, buttonCallback, buttonPromise, buttonAsync);
+  const buttonHttpGet = document.createElement('input');
+  buttonHttpGet.setAttribute('type', 'button');
+  buttonHttpGet.setAttribute('data-action', 'http-get');
+  buttonHttpGet.setAttribute('value', 'Http get');
+
+  const buttonShowEmployees = document.createElement('input');
+  buttonShowEmployees.setAttribute('type', 'button');
+  buttonShowEmployees.setAttribute('data-action', 'employees');
+  buttonShowEmployees.setAttribute('value', 'Show employees list');
+
+  taskFirst.append(text, number, buttonCallback, buttonPromise, buttonAsync);
+  taskSecond.append(buttonHttpGet);
+  taskThird.append(buttonShowEmployees);
 };
 
 generateDomElements();
@@ -60,10 +77,49 @@ const loadDataAsync = (delay, data) => {
       const res = await data;
       alert(res);
     } else {
-      console.log(new Error('Something went wrong!'));
+      alert(new Error('Something went wrong!').message);
     }
   }, +delay);
 };
+
+// https://api.github.com/users/mikita-kandratsyeu/repos
+
+// HTTP GET
+const httpGet = (url, callback) => {
+  const random = Math.round(Math.random());
+
+  const xhr = new XMLHttpRequest();
+
+  xhr.open('GET', url);
+
+  xhr.responseType = 'json';
+
+  xhr.send();
+
+  xhr.onload = () => {
+    if (random) {
+      callback(null, xhr.response);
+    } else {
+      callback(new Error('Something went wrong!'));
+    }
+  };
+};
+
+// Promisified
+const httpGetPromise = (url, delay) => new Promise((res, rej) => {
+  httpGet(url, (err, result) => {
+    setTimeout(() => {
+      if (err) {
+        rej(err);
+      } else {
+        res(result);
+      }
+    }, delay);
+  });
+});
+
+// Get random number from min to max
+const random = (min, max) => Math.floor(min + Math.random() * (max + 1 - min));
 
 const clickHandler = (e) => {
   const { action } = e.target.dataset;
@@ -73,10 +129,10 @@ const clickHandler = (e) => {
 
   switch (action) {
     case 'callback':
-      loadDataCallback(data, (error, result) => {
+      loadDataCallback(data, (err, result) => {
         setTimeout(() => {
-          if (error) {
-            console.log(error);
+          if (err) {
+            alert(err.message);
           } else {
             alert(result);
           }
@@ -86,13 +142,24 @@ const clickHandler = (e) => {
     case 'promise':
       loadDataPromise(delay, data)
         .then((res) => alert(res))
-        .catch((rej) => console.log(rej));
+        .catch((rej) => alert(rej.message));
       break;
     case 'async':
       loadDataAsync(delay, data);
       break;
+    case 'http-get':
+      textContent.textContent = 'Loading...';
+
+      httpGetPromise('https://api.github.com/users/mikita-kandratsyeu/repos', random(1000, 3000))
+        .then((res) => {
+          textContent.textContent = res.map((item) => item.name);
+        })
+        .catch((rej) => {
+          textContent.textContent = rej.message;
+        });
+      break;
     default:
-      console.log('Not found!');
+      console.log('Try again!');
   }
 };
 
