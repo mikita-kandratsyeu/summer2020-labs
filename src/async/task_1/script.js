@@ -5,6 +5,7 @@ const taskSecond = document.querySelector('#task-2');
 const taskThird = document.querySelector('#task-3');
 
 const textContent = document.querySelector('#text-content');
+const spinner = document.querySelector('.spinner');
 
 const generateDomElements = () => {
   const text = document.createElement('input');
@@ -82,8 +83,6 @@ const loadDataAsync = (delay, data) => {
   }, +delay);
 };
 
-// https://api.github.com/users/mikita-kandratsyeu/repos
-
 // HTTP GET
 const httpGet = (url, callback) => {
   const random = Math.round(Math.random());
@@ -100,7 +99,7 @@ const httpGet = (url, callback) => {
     if (random) {
       callback(null, xhr.response);
     } else {
-      callback(new Error('Something went wrong!'));
+      callback(new Error('Something went wrong! Try again!'));
     }
   };
 };
@@ -155,6 +154,30 @@ const clickHandler = (e) => {
           textContent.textContent = res.map((item) => item.name);
         })
         .catch((rej) => {
+          textContent.textContent = rej.message;
+        });
+      break;
+    case 'employees':
+      spinner.style.display = 'block';
+      textContent.textContent = 'Loading...';
+
+      httpGetPromise('./api.json', random(1000, 3000))
+        .then((res) => {
+          textContent.textContent = '';
+          res.data.forEach((item) => {
+            spinner.style.display = 'none';
+
+            textContent.innerHTML += `<p>
+              Name: ${item.employee_name};
+              Age: ${item.employee_age};
+              Salary: ${item.employee_salary};
+              Image: ${item.profile_image};
+              </p>`;
+          });
+        })
+        .catch((rej) => {
+          spinner.style.display = 'none';
+
           textContent.textContent = rej.message;
         });
       break;
