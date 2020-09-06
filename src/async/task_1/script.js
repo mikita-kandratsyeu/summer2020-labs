@@ -164,9 +164,9 @@ const clickHandler = (e) => {
       httpGetPromise('./api.json', random(1000, 3000))
         .then((res) => {
           textContent.textContent = '';
+          spinner.style.display = 'none';
+          
           res.data.forEach((item) => {
-            spinner.style.display = 'none';
-
             textContent.innerHTML += `<p>
               Name: ${item.employee_name};
               Age: ${item.employee_age};
