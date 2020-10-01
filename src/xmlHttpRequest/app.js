@@ -1,5 +1,22 @@
 import { getRequest, postRequest, deleteRequest } from './modules';
 
+const body = document.querySelector('body');
+const colorPicker = document.querySelector('#color-picker');
+const font = document.querySelector('#select-font');
+
+const bg = localStorage.getItem('backgroundColor');
+const fontStyle = localStorage.getItem('font');
+
+if (bg) {
+  body.style.backgroundColor = bg;
+}
+
+if (fontStyle) {
+  font.value = fontStyle;
+
+  body.style.fontFamily = fontStyle;
+}
+
 function clickHandler(e) {
   const { action } = e.target.dataset;
 
@@ -50,6 +67,17 @@ document.querySelector('#form-post')
 document.querySelector('#form-delete')
   .addEventListener('submit', (e) => e.preventDefault());
 
+body.addEventListener('click', clickHandler);
 
-document.querySelector('body')
-  .addEventListener('click', clickHandler);
+
+colorPicker.addEventListener('input', (e) => {
+  body.style.backgroundColor = e.target.value;
+
+  localStorage.setItem('backgroundColor', e.target.value);
+});
+
+font.addEventListener('input', (e) => {
+  body.style.fontFamily = e.target.value;
+
+  localStorage.setItem('font', e.target.value);
+});
