@@ -408,6 +408,17 @@ eval("// shim for using process in browser\nvar process = module.exports = {};\n
 
 /***/ }),
 
+/***/ "./node_modules/uniqid/index.js":
+/*!**************************************!*\
+  !*** ./node_modules/uniqid/index.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("/* WEBPACK VAR INJECTION */(function(process) {/* \n(The MIT License)\nCopyright (c) 2014-2019 Halász Ádám <mail@adamhalasz.com>\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n*/\n\n//  Unique Hexatridecimal ID Generator\n// ================================================\n\n//  Dependencies\n// ================================================\nvar pid = process && process.pid ? process.pid.toString(36) : '' ;\nvar address = '';\nif(false){ var i, mac, networkInterfaces; } \n\n//  Exports\n// ================================================\nmodule.exports = module.exports.default = function(prefix, suffix){ return (prefix ? prefix : '') + address + pid + now().toString(36) + (suffix ? suffix : ''); }\nmodule.exports.process = function(prefix, suffix){ return (prefix ? prefix : '') + pid + now().toString(36) + (suffix ? suffix : ''); }\nmodule.exports.time    = function(prefix, suffix){ return (prefix ? prefix : '') + now().toString(36) + (suffix ? suffix : ''); }\n\n//  Helpers\n// ================================================\nfunction now(){\n    var time = Date.now();\n    var last = now.last || time;\n    return now.last = time > last ? time : last + 1;\n}\n\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../process/browser.js */ \"./node_modules/process/browser.js\")))\n\n//# sourceURL=webpack:///./node_modules/uniqid/index.js?");
+
+/***/ }),
+
 /***/ "./src/xmlHttpRequest/app.js":
 /*!***********************************!*\
   !*** ./src/xmlHttpRequest/app.js ***!
@@ -416,19 +427,19 @@ eval("// shim for using process in browser\nvar process = module.exports = {};\n
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules */ \"./src/xmlHttpRequest/modules/index.js\");\n\n\nObject(_modules__WEBPACK_IMPORTED_MODULE_0__[\"getAlbums\"])();\n\n\n//# sourceURL=webpack:///./src/xmlHttpRequest/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules */ \"./src/xmlHttpRequest/modules/index.js\");\n\n\nfunction clickHandler(e) {\n  const { action } = e.target.dataset;\n\n  switch (action) {\n    case 'post':\n      Object(_modules__WEBPACK_IMPORTED_MODULE_0__[\"postRequest\"])('https://jsonplaceholder.typicode.com/users');\n      break;\n    case 'albums':\n      Object(_modules__WEBPACK_IMPORTED_MODULE_0__[\"getRequest\"])(\n        'https://jsonplaceholder.typicode.com/users/1/albums',\n        {\n          id: 'id',\n          title: 'title',\n        },\n      );\n      break;\n    case 'todos':\n      Object(_modules__WEBPACK_IMPORTED_MODULE_0__[\"getRequest\"])(\n        'https://jsonplaceholder.typicode.com/users/1/todos',\n        {\n          id: 'id',\n          title: 'title',\n          completed: 'completed',\n        },\n      );\n      break;\n    case 'posts':\n      Object(_modules__WEBPACK_IMPORTED_MODULE_0__[\"getRequest\"])(\n        'https://jsonplaceholder.typicode.com/users/1/posts',\n        {\n          id: 'id',\n          title: 'title',\n          body: 'body',\n        },\n      );\n      break;\n    default:\n      console.log('Missed');\n  }\n}\n\ndocument.querySelector('form')\n  .addEventListener('submit', (e) => e.preventDefault());\n\n\ndocument.querySelector('body')\n  .addEventListener('click', clickHandler);\n\n\n//# sourceURL=webpack:///./src/xmlHttpRequest/app.js?");
 
 /***/ }),
 
-/***/ "./src/xmlHttpRequest/modules/getAlbums.js":
-/*!*************************************************!*\
-  !*** ./src/xmlHttpRequest/modules/getAlbums.js ***!
-  \*************************************************/
+/***/ "./src/xmlHttpRequest/modules/getRequest.js":
+/*!**************************************************!*\
+  !*** ./src/xmlHttpRequest/modules/getRequest.js ***!
+  \**************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return getAlbums; });\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ \"./node_modules/axios/index.js\");\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);\n\n\nconst outputTable = document.querySelector('.output-table');\nconst loader = document.querySelector('.output-data > p');\n\nasync function getAlbums() {\n  try {\n    loader.classList.remove('hidden');\n    outputTable.classList.add('hidden');\n\n    const response = await axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('https://jsonplaceholder.typicode.com/users/1/albums');\n\n    loader.classList.add('hidden');\n    outputTable.classList.remove('hidden');\n\n    const { data } = response;\n\n    const trTitle = document.createElement('tr');\n\n    const titles = {\n      id: 'ID',\n      title: 'Title',\n    };\n\n    Object.keys(titles)\n      .forEach((key) => {\n        const th = document.createElement('th');\n        th.textContent = titles[key];\n        trTitle.append(th);\n      });\n\n    outputTable.append(trTitle);\n\n    Object.keys(data)\n      .forEach((key) => {\n        const tr = document.createElement('tr');\n\n        const tdId = document.createElement('td');\n        tdId.textContent = data[key].id;\n\n        console.log(data[key].title);\n\n        const tdTitle = document.createElement('td');\n        tdTitle.textContent = data[key].title;\n\n        tr.append(tdId);\n        tr.append(tdTitle);\n        outputTable.append(tr);\n      });\n  } catch (error) {\n    loader.textContent = 'Error';\n  }\n}\n\n\n//# sourceURL=webpack:///./src/xmlHttpRequest/modules/getAlbums.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return postRequest; });\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ \"./node_modules/axios/index.js\");\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);\n\n\nconst outputTable = document.querySelector('.output-table');\nconst loader = document.querySelector('.output-data > p');\n\nasync function postRequest(link, header) {\n  try {\n    loader.textContent = 'Loading...';\n\n    loader.classList.remove('hidden');\n    outputTable.classList.add('hidden');\n\n    const response = await axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(link);\n\n    loader.textContent = '';\n    outputTable.innerHTML = '';\n\n    loader.classList.add('hidden');\n    outputTable.classList.remove('hidden');\n\n    const { data } = response;\n\n    const trHeader = document.createElement('tr');\n\n    Object.keys(header)\n      .forEach((key) => {\n        const th = document.createElement('th');\n        th.textContent = header[key];\n        trHeader.append(th);\n      });\n\n    outputTable.append(trHeader);\n\n    Object.keys(data)\n      .forEach((key) => {\n        const tr = document.createElement('tr');\n\n        Object.keys(header)\n          .forEach((item) => {\n            const td = document.createElement('td');\n            td.textContent = data[key][header[item]];\n            tr.append(td);\n          });\n\n        outputTable.append(tr);\n      });\n  } catch (error) {\n    console.log(error);\n\n    loader.textContent = 'Error';\n  }\n}\n\n\n//# sourceURL=webpack:///./src/xmlHttpRequest/modules/getRequest.js?");
 
 /***/ }),
 
@@ -436,11 +447,23 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /*!*********************************************!*\
   !*** ./src/xmlHttpRequest/modules/index.js ***!
   \*********************************************/
-/*! exports provided: getAlbums */
+/*! exports provided: getRequest, postRequest */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _getAlbums__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./getAlbums */ \"./src/xmlHttpRequest/modules/getAlbums.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"getAlbums\", function() { return _getAlbums__WEBPACK_IMPORTED_MODULE_0__[\"default\"]; });\n\n\n\n\n//# sourceURL=webpack:///./src/xmlHttpRequest/modules/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _getRequest__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./getRequest */ \"./src/xmlHttpRequest/modules/getRequest.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"getRequest\", function() { return _getRequest__WEBPACK_IMPORTED_MODULE_0__[\"default\"]; });\n\n/* harmony import */ var _postRequest__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./postRequest */ \"./src/xmlHttpRequest/modules/postRequest.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"postRequest\", function() { return _postRequest__WEBPACK_IMPORTED_MODULE_1__[\"default\"]; });\n\n\n\n\n\n//# sourceURL=webpack:///./src/xmlHttpRequest/modules/index.js?");
+
+/***/ }),
+
+/***/ "./src/xmlHttpRequest/modules/postRequest.js":
+/*!***************************************************!*\
+  !*** ./src/xmlHttpRequest/modules/postRequest.js ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return postRequest; });\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ \"./node_modules/axios/index.js\");\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var uniqid__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! uniqid */ \"./node_modules/uniqid/index.js\");\n/* harmony import */ var uniqid__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(uniqid__WEBPACK_IMPORTED_MODULE_1__);\n\n\n\nconst name = document.querySelector('#name').value;\nconst username = document.querySelector('#username').value;\nconst email = document.querySelector('#email').value;\nconst phone = document.querySelector('#phone').value;\nconst website = document.querySelector('#website').value;\n\nasync function postRequest(link) {\n  try {\n    console.log(name);\n    const response = await axios__WEBPACK_IMPORTED_MODULE_0___default.a.post(link, {\n      id: uniqid__WEBPACK_IMPORTED_MODULE_1___default()(),\n      name,\n      username,\n      email,\n      address: {},\n      phone,\n      website,\n      company: {},\n    });\n  } catch (error) {\n    console.log(error);\n  }\n}\n\n\n//# sourceURL=webpack:///./src/xmlHttpRequest/modules/postRequest.js?");
 
 /***/ })
 

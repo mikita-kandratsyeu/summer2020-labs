@@ -13,6 +13,37 @@
 </head>
 <body>
 <div class="input-data">
+  <p>XMRHttpRequest</p>
+  <form id="form-post">
+    <label>
+      <input type="text" id="name" placeholder="Full name" />
+    </label>
+
+    <label>
+      <input type="text" id="username" placeholder="Username" />
+    </label>
+
+    <label>
+      <input type="text" id="email" placeholder="Email" />
+    </label>
+
+    <label>
+      <input type="text" id="phone" placeholder="Phone" />
+    </label>
+
+    <label>
+      <input type="text" id="website" placeholder="Website" />
+    </label>
+
+    <button type="submit" data-action="post">POST</button>
+  </form>
+
+  <form id="form-delete">
+    <label>
+      <input type="number" min="0" id="id-user" placeholder="ID of user" />
+    </label>
+    <button type="submit" data-action="delete">DELETE</button>
+  </form>
   <div class="btn-group">
     <button type="button" data-action="albums">Albums</button>
     <button type="button" data-action="todos">Todos</button>

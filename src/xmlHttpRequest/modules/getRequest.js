@@ -45,6 +45,8 @@ export default async function postRequest(link, header) {
         outputTable.append(tr);
       });
   } catch (error) {
+    console.log(error);
+
     loader.textContent = 'Error';
   }
 }
