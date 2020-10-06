@@ -9,7 +9,8 @@
     "js-task-2": "node src/js/task_2/script.js",
     "js-task-3": "node src/js/task_3/script.js",
     "js-task-4": "node src/js/task_4/js/script.js",
-    "js-task-5": "node src/js/task_5/script.js"
+    "js-task-5": "node src/js/task_5/script.js",
+    "xmlHttpRequest-localStorage": "webpack && webpack-dev-server --open"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,13 @@
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.20.2",
     "gulp": "^4.0.2",
-    "gulp-sass": "^4.1.0"
+    "gulp-sass": "^4.1.0",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "axios": "^0.20.0",
+    "uniqid": "^5.2.0"
   }
 }

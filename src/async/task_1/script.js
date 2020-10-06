@@ -165,7 +165,7 @@ const clickHandler = (e) => {
         .then((res) => {
           textContent.textContent = '';
           spinner.style.display = 'none';
-          
+
           res.data.forEach((item) => {
             textContent.innerHTML += `<p>
               Name: ${item.employee_name};
